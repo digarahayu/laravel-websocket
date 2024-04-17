@@ -1,0 +1,77 @@
+{
+    "name": "beyondcode/laravel-websockets",
+    "description": "An easy to launch a Pusher-compatible WebSockets server for Laravel.",
+    "keywords": [
+        "beyondcode",
+        "laravel-websockets",
+        "laravel",
+        "php"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/beyondcode/laravel-websockets",
+    "authors": [
+        {
+            "name": "Marcel Pociot",
+            "email": "marcel@beyondco.de",
+            "homepage": "https://beyondcode.de",
+            "role": "Developer"
+        },
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        },
+        {
+            "name": "Alex Renoki",
+            "homepage": "https://github.com/rennokki",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "cboden/ratchet": "^0.4.4",
+        "clue/block-react": "^1.5",
+        "clue/reactphp-sqlite": "^1.0",
+        "clue/redis-react": "^2.6",
+        "facade/ignition-contracts": "^1.0",
+        "react/mysql": "^0.5",
+        "react/promise": "^2.8"
+    },
+    "require-dev": {
+        "clue/buzz-react": "^2.9",
+        "laravel/legacy-factories": "^1.1",
+        "orchestra/testbench-browser-kit": "^7.0"
+    },
+    "suggest": {
+        "ext-pcntl": "Running the server needs pcntl to listen to command signals and soft-shutdown.",
+        "doctrine/dbal": "Required to run database migrations (^2.9|^3.0)."
+    },
+    "autoload": {
+        "psr-4": {
+            "BeyondCode\\LaravelWebSockets\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BeyondCode\\LaravelWebSockets\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BeyondCode\\LaravelWebSockets\\WebSocketsServiceProvider"
+            ],
+            "aliases": {
+                "WebSocketRouter": "BeyondCode\\LaravelWebSockets\\Facades\\WebSocketRouter"
+            }
+        }
+    }
+}
